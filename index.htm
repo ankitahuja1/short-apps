@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Order Total From Zomato/Swiggy/Junk</h2>
+    <div id="form">
+      <section>
+        <span>Your BMI </span>
+        <input
+          class="bmi"
+          type="number"
+          placeholder="enter your BMI.."
+          value="24"
+        />
+      </section>
+      <br />
+      <section>
+        <span>Your age </span>
+        <input
+          class="age"
+          type="number"
+          placeholder="enter your order total.."
+          value="24"
+        />
+      </section>
+      <br />
+      <section>
+        <span>Your Order Total </span>
+        <input
+          class="order"
+          type="number"
+          placeholder="enter your order total.."
+          value="150"
+        />
+      </section>
+      <br />
+      <div id="output"></div>
+    </div>
+  </body>
+  <script>
+    const method = () => {
+
+      const totalPrice = () => {
+
+        let bmi = +document.querySelector(".bmi").value;
+        let age = +document.querySelector(".age").value;
+        let order = +document.querySelector(".order").value;
+        console.log(bmi * age * order);
+        if (bmi > 24 || age > 21) {
+          return (bmi * age * order);
+        } else {
+          return (bmi + age + order);
+        }
+
+      };
+      document.querySelector("#output").innerHTML =
+        "Total cost of this order is: Rs. " + Math.round(totalPrice());
+    };
+    document.querySelector("#form").addEventListener("keyup", method);
+    document.querySelector("#form").addEventListener("change", method);
+  </script>
+</html>
